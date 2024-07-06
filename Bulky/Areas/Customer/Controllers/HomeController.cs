@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Bulky.Models;
 
-namespace Bulky.Controllers;
+namespace Bulky.Areas.Customer.Controllers;
 
 public class HomeController : Controller
 {
