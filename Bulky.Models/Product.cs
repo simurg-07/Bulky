@@ -5,12 +5,15 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bulky.Models
 {
     public class Product
     {
-        public int Id { get; set; }
+        //bu keyi create ekranına koyup değer atayıp kayıt edersen uygulama patlar
+        [Key]
+		public int Id { get; set; }
         [Required]
         public string Title { get; set; }
         public string Description { get; set; }
@@ -18,10 +21,13 @@ namespace Bulky.Models
         public string ISBN { get; set; }
         [Required]
         public string Author { get; set; }
+
+
         [Required]
         [Range(1, 10000)]
         [Display(Name = "List Price")]
         public double ListPrice { get; set; }
+
         [Required]
         [Range(1, 10000)]
         [Display(Name = "Price for 1-50")]

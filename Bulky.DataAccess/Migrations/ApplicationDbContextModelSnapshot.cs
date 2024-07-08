@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Bulky.Migrations
+namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -48,21 +48,21 @@ namespace Bulky.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 7, 6, 15, 3, 47, 293, DateTimeKind.Local).AddTicks(2165),
+                            CreatedDateTime = new DateTime(2024, 7, 8, 3, 25, 10, 116, DateTimeKind.Local).AddTicks(1211),
                             DisplayOrder = 1,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 7, 6, 15, 3, 47, 293, DateTimeKind.Local).AddTicks(2186),
+                            CreatedDateTime = new DateTime(2024, 7, 8, 3, 25, 10, 116, DateTimeKind.Local).AddTicks(1223),
                             DisplayOrder = 2,
                             Name = "SciFi"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 7, 6, 15, 3, 47, 293, DateTimeKind.Local).AddTicks(2187),
+                            CreatedDateTime = new DateTime(2024, 7, 8, 3, 25, 10, 116, DateTimeKind.Local).AddTicks(1224),
                             DisplayOrder = 3,
                             Name = "History"
                         });

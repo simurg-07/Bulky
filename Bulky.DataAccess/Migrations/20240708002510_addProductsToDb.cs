@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace Bulky.Migrations
+namespace Bulky.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class addProductsToDb : Migration
@@ -13,6 +13,21 @@ namespace Bulky.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Categories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DisplayOrder = table.Column<int>(type: "int", nullable: false),
+                    CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
@@ -33,26 +48,15 @@ namespace Bulky.Migrations
                     table.PrimaryKey("PK_Products", x => x.Id);
                 });
 
-            migrationBuilder.UpdateData(
+            migrationBuilder.InsertData(
                 table: "Categories",
-                keyColumn: "Id",
-                keyValue: 1,
-                column: "CreatedDateTime",
-                value: new DateTime(2024, 7, 6, 15, 3, 47, 293, DateTimeKind.Local).AddTicks(2165));
-
-            migrationBuilder.UpdateData(
-                table: "Categories",
-                keyColumn: "Id",
-                keyValue: 2,
-                column: "CreatedDateTime",
-                value: new DateTime(2024, 7, 6, 15, 3, 47, 293, DateTimeKind.Local).AddTicks(2186));
-
-            migrationBuilder.UpdateData(
-                table: "Categories",
-                keyColumn: "Id",
-                keyValue: 3,
-                column: "CreatedDateTime",
-                value: new DateTime(2024, 7, 6, 15, 3, 47, 293, DateTimeKind.Local).AddTicks(2187));
+                columns: new[] { "Id", "CreatedDateTime", "DisplayOrder", "Name" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 7, 8, 3, 25, 10, 116, DateTimeKind.Local).AddTicks(1211), 1, "Action" },
+                    { 2, new DateTime(2024, 7, 8, 3, 25, 10, 116, DateTimeKind.Local).AddTicks(1223), 2, "SciFi" },
+                    { 3, new DateTime(2024, 7, 8, 3, 25, 10, 116, DateTimeKind.Local).AddTicks(1224), 3, "History" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Products",
@@ -72,28 +76,10 @@ namespace Bulky.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Categories");
+
+            migrationBuilder.DropTable(
                 name: "Products");
-
-            migrationBuilder.UpdateData(
-                table: "Categories",
-                keyColumn: "Id",
-                keyValue: 1,
-                column: "CreatedDateTime",
-                value: new DateTime(2024, 6, 26, 2, 2, 30, 396, DateTimeKind.Local).AddTicks(940));
-
-            migrationBuilder.UpdateData(
-                table: "Categories",
-                keyColumn: "Id",
-                keyValue: 2,
-                column: "CreatedDateTime",
-                value: new DateTime(2024, 6, 26, 2, 2, 30, 396, DateTimeKind.Local).AddTicks(955));
-
-            migrationBuilder.UpdateData(
-                table: "Categories",
-                keyColumn: "Id",
-                keyValue: 3,
-                column: "CreatedDateTime",
-                value: new DateTime(2024, 6, 26, 2, 2, 30, 396, DateTimeKind.Local).AddTicks(956));
         }
     }
 }
