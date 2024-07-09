@@ -42,5 +42,13 @@ namespace Bulky.Models
         [Display(Name = "Price for 100+")]
         [Range(1, 10000)]
         public double Price100 { get; set; }
+
+        public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public Category Category { get; set; }
+        // ForeignKey yapısı tanımladığın sayı dışında başka birşey kullanmana izin vermez
+
+        public string ImageUrl { get; set; }
     }
 }
