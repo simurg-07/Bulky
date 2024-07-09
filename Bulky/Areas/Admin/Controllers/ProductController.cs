@@ -1,5 +1,6 @@
 ﻿using Bulky.DataAccess.Repository.IRepository;
 using Bulky.Models;
+using Bulky.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -24,28 +25,43 @@ namespace Bulky.Areas.Admin.Controllers
         //GET
         public IActionResult Create()
         {
-            IEnumerable<SelectListItem> CategoryList = _unitofWork.Category.GetAll().Select(u=> new SelectListItem { Text = u.Name, Value = u.Id.ToString() });
-            ViewBag.CategoryList = CategoryList;
+
+
+            ProductVM productVM = new()
+            {
+                CategoryList = _unitofWork.Category.GetAll().Select(u => new SelectListItem { Text = u.Name, Value = u.Id.ToString() }),
+
+
+                Product = new Product()
+            };
 
             // Üstteki olay category select kısmındaki category kısmını getiriyor
-            return View();
+            return View(productVM);
         }
 
 
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Product obj)
+        public IActionResult Create(ProductVM productVM)
         {
           
             if (ModelState.IsValid)
             {
-                _unitofWork.Product.Add(obj);
+                _unitofWork.Product.Add(productVM.Product);
                 _unitofWork.Save();
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
-            return View(obj);
+            else
+            {
+                productVM.CategoryList = _unitofWork.Category.GetAll().Select(u => new SelectListItem { Text = u.Name, Value = u.Id.ToString() });
+				
+
+				// Üstteki olay category select kısmındaki category kısmını getiriyor
+				return View(productVM);
+			}
+           
         }
 
 
