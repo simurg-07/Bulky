@@ -2,6 +2,7 @@
 @model IEnumerable<Product>
 @{
     ViewData["Title"] = "Index";
+    
 }
 
 
@@ -11,14 +12,14 @@
             <h2 class="text-primary">Product List</h2>
         </div>
         <div class="col-6 text-end">
-            <a asp-controller="Product" asp-action="Create" class="btn btn-primary">
+            <a asp-controller="Product" asp-action="Upsert" class="btn btn-primary">
                 <i class="bi bi-plus-circle"></i> &nbsp; Create New Product
             </a>
         </div>
     </div>
     <br /><br />
 
-    <table class="table table-bordered table-striped" style="width:100%">
+    <table id="tblData" class="table table-bordered table-striped" style="width:100%">
         <thead>
             <tr>
                 <th>
@@ -28,50 +29,25 @@
                     ISBN
                 </th>
                 <th>
-                    Author
+                    Price
                 </th>
                 
                 <th>
-                    Price
+                    Author
                 </th>
                 <th>
                     Category
                 </th>
-                <th></th>
+                <th>
+
+                </th>
             </tr>
         </thead>
-        <tbody>
-            @foreach (var obj in Model)
-            {
-                <tr>
-                    <td width="50%">
-                        @obj.Title
-                    </td>
-                    <td width="50%">
-                        @obj.ISBN
-                    </td>
-                    <td width="30%">
-                        @obj.Author
-                    </td>
-                    
-                    <td width="30%">
-                        @obj.Price
-                    </td>
-                    <td>
-
-                    </td>
-                   
-                    <td>
-                        <div class="w-75 btn-group" role="group">
-                            <a asp-controller="Product" asp-action="Edit" asp-route-id="@obj.Id"
-                               class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Edit</a>
-                            <a asp-controller="Product" asp-action="Delete" asp-route-id="@obj.Id"
-                               class="btn btn-danger mx-2"> <i class="bi bi-trash-fill"></i> Delete</a>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
+     
 
     </table>
 </div>
+
+@section Scripts{
+    <script src="~/js/product.js"></script>
+}

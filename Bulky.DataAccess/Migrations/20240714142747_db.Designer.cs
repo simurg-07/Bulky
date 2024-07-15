@@ -4,6 +4,7 @@ using Bulky.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240714142747_db")]
+    partial class db
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,21 +51,21 @@ namespace Bulky.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 7, 15, 18, 16, 22, 541, DateTimeKind.Local).AddTicks(7043),
+                            CreatedDateTime = new DateTime(2024, 7, 14, 17, 27, 47, 173, DateTimeKind.Local).AddTicks(3843),
                             DisplayOrder = 1,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 7, 15, 18, 16, 22, 541, DateTimeKind.Local).AddTicks(7061),
+                            CreatedDateTime = new DateTime(2024, 7, 14, 17, 27, 47, 173, DateTimeKind.Local).AddTicks(3861),
                             DisplayOrder = 2,
                             Name = "SciFi"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 7, 15, 18, 16, 22, 541, DateTimeKind.Local).AddTicks(7062),
+                            CreatedDateTime = new DateTime(2024, 7, 14, 17, 27, 47, 173, DateTimeKind.Local).AddTicks(3862),
                             DisplayOrder = 3,
                             Name = "History"
                         });
@@ -201,132 +204,6 @@ namespace Bulky.DataAccess.Migrations
                             Price100 = 20.0,
                             Price50 = 22.0,
                             Title = "Leaves and Wonders"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Author = "Tom Hardy",
-                            CategoryId = 1,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "MR1234567890",
-                            ImageUrl = "",
-                            ListPrice = 45.0,
-                            Price = 40.0,
-                            Price100 = 30.0,
-                            Price50 = 35.0,
-                            Title = "Mystic River"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Author = "Lily Collins",
-                            CategoryId = 1,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "MS0987654321",
-                            ImageUrl = "",
-                            ListPrice = 60.0,
-                            Price = 55.0,
-                            Price100 = 45.0,
-                            Price50 = 50.0,
-                            Title = "Moonlight Shadows"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Author = "Chris Evans",
-                            CategoryId = 2,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "GS2345678901",
-                            ImageUrl = "",
-                            ListPrice = 80.0,
-                            Price = 75.0,
-                            Price100 = 65.0,
-                            Price50 = 70.0,
-                            Title = "Golden Sands"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Author = "Emma Watson",
-                            CategoryId = 3,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "WP3456789012",
-                            ImageUrl = "",
-                            ListPrice = 35.0,
-                            Price = 30.0,
-                            Price100 = 25.0,
-                            Price50 = 28.0,
-                            Title = "Whispering Pines"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Author = "Robert Downey Jr.",
-                            CategoryId = 1,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "SD4567890123",
-                            ImageUrl = "",
-                            ListPrice = 55.0,
-                            Price = 50.0,
-                            Price100 = 40.0,
-                            Price50 = 45.0,
-                            Title = "Sunset Dreams"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Author = "Scarlett Johansson",
-                            CategoryId = 2,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "OB5678901234",
-                            ImageUrl = "",
-                            ListPrice = 70.0,
-                            Price = 65.0,
-                            Price100 = 55.0,
-                            Price50 = 60.0,
-                            Title = "Ocean Breeze"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Author = "Chris Hemsworth",
-                            CategoryId = 3,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "WT6789012345",
-                            ImageUrl = "",
-                            ListPrice = 40.0,
-                            Price = 35.0,
-                            Price100 = 25.0,
-                            Price50 = 30.0,
-                            Title = "Winter's Tale"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Author = "Gal Gadot",
-                            CategoryId = 2,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "SB7890123456",
-                            ImageUrl = "",
-                            ListPrice = 65.0,
-                            Price = 60.0,
-                            Price100 = 50.0,
-                            Price50 = 55.0,
-                            Title = "Spring Blossoms"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Author = "Jason Momoa",
-                            CategoryId = 1,
-                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
-                            ISBN = "AL8901234567",
-                            ImageUrl = "",
-                            ListPrice = 30.0,
-                            Price = 28.0,
-                            Price100 = 20.0,
-                            Price50 = 25.0,
-                            Title = "Autumn Leaves"
                         });
                 });
 
