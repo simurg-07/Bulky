@@ -22,7 +22,7 @@ namespace Bulky.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Bulky.Models.Category", b =>
+            modelBuilder.Entity("Bulky.Models.Models.Concrete.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,27 +48,27 @@ namespace Bulky.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 7, 15, 18, 16, 22, 541, DateTimeKind.Local).AddTicks(7043),
+                            CreatedDateTime = new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7476),
                             DisplayOrder = 1,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 7, 15, 18, 16, 22, 541, DateTimeKind.Local).AddTicks(7061),
+                            CreatedDateTime = new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7489),
                             DisplayOrder = 2,
                             Name = "SciFi"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 7, 15, 18, 16, 22, 541, DateTimeKind.Local).AddTicks(7062),
+                            CreatedDateTime = new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7491),
                             DisplayOrder = 3,
                             Name = "History"
                         });
                 });
 
-            modelBuilder.Entity("Bulky.Models.Product", b =>
+            modelBuilder.Entity("Bulky.Models.Models.Concrete.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -330,9 +330,9 @@ namespace Bulky.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Bulky.Models.Product", b =>
+            modelBuilder.Entity("Bulky.Models.Models.Concrete.Product", b =>
                 {
-                    b.HasOne("Bulky.Models.Category", "Category")
+                    b.HasOne("Bulky.Models.Models.Concrete.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)

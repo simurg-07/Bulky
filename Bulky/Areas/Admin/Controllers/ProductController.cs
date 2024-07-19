@@ -1,6 +1,7 @@
 ﻿using Bulky.DataAccess.Repository;
 using Bulky.DataAccess.Repository.IRepository;
 using Bulky.Models;
+using Bulky.Models.Models.Concrete;
 using Bulky.Models.ViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,22 +11,23 @@ using NuGet.Packaging.Signing;
 
 namespace Bulky.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class ProductController : Controller
     {
 
 
-        private readonly IUnitOfWork _unitofWork;
+        private readonly IUnitOfWork _unitOfWork;
 		private readonly IWebHostEnvironment _webHostEnvironment;
 
 		public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
-            _unitofWork = unitOfWork;
+            _unitOfWork = unitOfWork;
             _webHostEnvironment = webHostEnvironment;
 
 		}
         public IActionResult Index()
         {
-            List<Product> objProductList = _unitofWork.Product.GetAll(includeProperties:"Category").ToList();
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties:"Category").ToList();
             return View(objProductList);
         }
 
@@ -37,7 +39,7 @@ namespace Bulky.Areas.Admin.Controllers
 
             ProductVM productVM = new()
             {
-                CategoryList = _unitofWork.Category.GetAll().Select(u => new SelectListItem { Text = u.Name, Value = u.Id.ToString() }),
+                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem { Text = u.Name, Value = u.Id.ToString() }),
 
 
                 Product = new Product()
@@ -51,7 +53,7 @@ namespace Bulky.Areas.Admin.Controllers
             else
             {
                 //update
-                productVM.Product = _unitofWork.Product.Get(u => u.Id == id);
+                productVM.Product = _unitOfWork.Product.Get(u => u.Id == id);
                 return View(productVM);
             }
 
@@ -91,21 +93,21 @@ namespace Bulky.Areas.Admin.Controllers
 				}
 
                 if (productVM.Product.Id == 0) { 
-                    _unitofWork.Product.Add(productVM.Product);
+                    _unitOfWork.Product.Add(productVM.Product);
                 }else
                 {
-					_unitofWork.Product.Update(productVM.Product);
+					_unitOfWork.Product.Update(productVM.Product);
 				}
 
 
 				
-                _unitofWork.Save();
+                _unitOfWork.Save();
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
             else
             {
-                productVM.CategoryList = _unitofWork.Category.GetAll().Select(u => new SelectListItem { Text = u.Name, Value = u.Id.ToString() });
+                productVM.CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem { Text = u.Name, Value = u.Id.ToString() });
 				
 
 				// Üstteki olay category select kısmındaki category kısmını getiriyor
@@ -138,7 +140,7 @@ namespace Bulky.Areas.Admin.Controllers
         //public IActionResult Edit(Product obj)
         //{
 
-           
+
         //    if (ModelState.IsValid)
         //    {
         //        _unitofWork.Product.Update(obj);
@@ -191,15 +193,15 @@ namespace Bulky.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<Product> objProductList = _unitofWork.Product.GetAll(includeProperties: "Category").ToList();
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
             return Json(new { data = objProductList });
         }
 
-        
-     
+
+
         public IActionResult Delete(int? id)
         {
-            var obj = _unitofWork.Product.Get(u => u.Id == id);
+            var obj = _unitOfWork.Product.Get(u => u.Id == id);
             if (obj == null)
             {
                 return Json(new { success = false, message = "Error while deleting" });
@@ -211,15 +213,17 @@ namespace Bulky.Areas.Admin.Controllers
                 System.IO.File.Delete(oldImagePath);
             }
 
-            _unitofWork.Product.Remove(obj);
-            _unitofWork.Save();
+            _unitOfWork.Product.Remove(obj);
+            _unitOfWork.Save();
             return Json(new { success = true, message = "Delete Successful" });
 
         }
 
 
         #endregion
+
+        
     }
-    }
+}
 
 

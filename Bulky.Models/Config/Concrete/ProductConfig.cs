@@ -1,29 +1,24 @@
+﻿using Bulky.Models.Config.Abstract;
 using Bulky.Models.Models.Concrete;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System.ComponentModel.DataAnnotations;
 
-namespace Bulky.Data;
-
-public class ApplicationDbContext : DbContext
+public class ProductConfig : BaseConfig<Product>
 {
-
-     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
-        {
-            
-        }
-
-        public DbSet<Category> Categories {get; set;}
-        public DbSet<Product> Products { get; set; }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public override void Configure(EntityTypeBuilder<Product> builder)
     {
-        modelBuilder.Entity<Category>().HasData(
-            
-            new Category { Id = 1, Name = "Action", DisplayOrder = 1},
-            new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
-            new Category { Id = 3, Name = "History", DisplayOrder = 3 }
-            );
+        base.Configure(builder);
 
-        modelBuilder.Entity<Product>().HasData(
+        builder.Property(p => p.Title).HasMaxLength(50);
+
+        builder.Property(p => p.Description).HasMaxLength(1000);
+        builder.Property(p => p.ISBN).HasMaxLength(50);
+        builder.Property(p => p.Author).HasMaxLength(50);
+
+       
+
+        builder.HasData(
     new Product
     {
         Id = 1,
@@ -234,10 +229,5 @@ public class ApplicationDbContext : DbContext
         CategoryId = 1,
         ImageUrl = ""
     });
-    
-
-
     }
-
-
 }
