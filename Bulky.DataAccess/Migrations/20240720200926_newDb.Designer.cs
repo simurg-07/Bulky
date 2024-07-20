@@ -4,6 +4,7 @@ using Bulky.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240720200926_newDb")]
+    partial class newDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,21 +52,21 @@ namespace Bulky.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 39, 17, 177, DateTimeKind.Local).AddTicks(5887),
+                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 9, 25, 915, DateTimeKind.Local).AddTicks(6949),
                             DisplayOrder = 1,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 39, 17, 177, DateTimeKind.Local).AddTicks(5898),
+                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 9, 25, 915, DateTimeKind.Local).AddTicks(6964),
                             DisplayOrder = 2,
                             Name = "SciFi"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 39, 17, 177, DateTimeKind.Local).AddTicks(5899),
+                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 9, 25, 915, DateTimeKind.Local).AddTicks(6965),
                             DisplayOrder = 3,
                             Name = "History"
                         });

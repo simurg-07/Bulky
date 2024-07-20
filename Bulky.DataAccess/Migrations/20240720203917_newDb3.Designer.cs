@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240719003835_newDb")]
-    partial class newDb
+    [Migration("20240720203917_newDb3")]
+    partial class newDb3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,8 @@ namespace Bulky.DataAccess.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -51,21 +52,21 @@ namespace Bulky.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7476),
+                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 39, 17, 177, DateTimeKind.Local).AddTicks(5887),
                             DisplayOrder = 1,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7489),
+                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 39, 17, 177, DateTimeKind.Local).AddTicks(5898),
                             DisplayOrder = 2,
                             Name = "SciFi"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7491),
+                            CreatedDateTime = new DateTime(2024, 7, 20, 23, 39, 17, 177, DateTimeKind.Local).AddTicks(5899),
                             DisplayOrder = 3,
                             Name = "History"
                         });
@@ -81,18 +82,21 @@ namespace Bulky.DataAccess.Migrations
 
                     b.Property<string>("Author")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<string>("ISBN")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
@@ -112,7 +116,8 @@ namespace Bulky.DataAccess.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(51)
+                        .HasColumnType("nvarchar(51)");
 
                     b.HasKey("Id");
 

@@ -67,6 +67,7 @@ namespace Bulky.Areas.Admin.Controllers
         public IActionResult Upsert(ProductVM productVM, IFormFile? file)
         {
           
+            
             if (ModelState.IsValid)
             {
 				string wwwRootPath = _webHostEnvironment.WebRootPath;
@@ -135,92 +136,92 @@ namespace Bulky.Areas.Admin.Controllers
         //}
 
 
-        ////POST
-        //[HttpPost]
-        //public IActionResult Edit(Product obj)
+        ////post
+        //[httppost]
+        //public ıactionresult edit(product obj)
         //{
 
 
-        //    if (ModelState.IsValid)
+        //    if (modelstate.ısvalid)
         //    {
-        //        _unitofWork.Product.Update(obj);
-        //        _unitofWork.Save();
-        //        TempData["success"] = "Product updated successfully";
-        //        return RedirectToAction("Index");
+        //        _unitofwork.product.update(obj);
+        //        _unitofwork.save();
+        //        tempdata["success"] = "product updated successfully";
+        //        return redirecttoaction("ındex");
         //    }
-        //    return View(obj);
+        //    return view(obj);
         //}
 
 
-        //public IActionResult Delete(int? id)
+        //public ıactionresult delete(int? id)
         //{
         //    if (id == null || id == 0)
         //    {
-        //        return NotFound();
+        //        return notfound();
         //    }
-        //    Product productFromDb = _unitofWork.Product.Get(u => u.Id == id);
+        //    product productfromdb = _unitofwork.product.get(u => u.ıd == id);
 
-        //    if (productFromDb == null)
+        //    if (productfromdb == null)
         //    {
-        //        return NotFound();
+        //        return notfound();
         //    }
 
-        //    return View(productFromDb);
+        //    return view(productfromdb);
         //}
 
 
-        ////POST
-        //[HttpPost, ActionName("Delete")]
+        ////post
+        //[httppost, actionname("delete")]
 
-        //public IActionResult DeletePOST(int? id)
+        //public ıactionresult deletepost(int? id)
         //{
-        //    Product productFromDb = _unitofWork.Product.Get(u => u.Id == id);
-        //    if (productFromDb == null)
+        //    product productfromdb = _unitofwork.product.get(u => u.ıd == id);
+        //    if (productfromdb == null)
         //    {
 
-        //        return NotFound();
+        //        return notfound();
         //    }
 
-        //    _unitofWork.Product.Remove(productFromDb);
-        //    _unitofWork.Save();
-        //    TempData["success"] = "Product deleted successfully";
-        //    return RedirectToAction("Index");
+        //    _unitofwork.product.remove(productfromdb);
+        //    _unitofwork.save();
+        //    tempdata["success"] = "product deleted successfully";
+        //    return redirecttoaction("ındex");
 
         //}
 
-        #region API CALLS
+        //#region apı calls
 
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
-            return Json(new { data = objProductList });
-        }
-
-
-
-        public IActionResult Delete(int? id)
-        {
-            var obj = _unitOfWork.Product.Get(u => u.Id == id);
-            if (obj == null)
-            {
-                return Json(new { success = false, message = "Error while deleting" });
-            }
-
-            var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, obj.ImageUrl.TrimStart('\\'));
-            if (System.IO.File.Exists(oldImagePath))
-            {
-                System.IO.File.Delete(oldImagePath);
-            }
-
-            _unitOfWork.Product.Remove(obj);
-            _unitOfWork.Save();
-            return Json(new { success = true, message = "Delete Successful" });
-
-        }
+        //[httpget]
+        //public ıactionresult getall()
+        //{
+        //    list<product> objproductlist = _unitofwork.product.getall(includeproperties: "category").tolist();
+        //    return json(new { data = objproductlist });
+        //}
 
 
-        #endregion
+
+        //public ıactionresult delete(int? id)
+        //{
+        //    var obj = _unitofwork.product.get(u => u.ıd == id);
+        //    if (obj == null)
+        //    {
+        //        return json(new { success = false, message = "error while deleting" });
+        //    }
+
+        //    var oldımagepath = path.combine(_webhostenvironment.webrootpath, obj.ımageurl.trimstart('\\'));
+        //    if (system.ıo.file.exists(oldımagepath))
+        //    {
+        //        system.ıo.file.delete(oldımagepath);
+        //    }
+
+        //    _unitofwork.product.remove(obj);
+        //    _unitofwork.save();
+        //    return json(new { success = true, message = "delete successful" });
+
+        //}
+
+
+        //#endregion
 
         
     }

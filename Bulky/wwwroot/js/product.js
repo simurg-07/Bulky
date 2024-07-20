@@ -6,7 +6,7 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
         "ajax": {
-            "url": "/admin/product/getall",
+            "url": "/api/productapi/getall",
             "type": "GET",
             "datatype": "json"
         },

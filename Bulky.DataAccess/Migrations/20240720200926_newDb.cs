@@ -19,7 +19,7 @@ namespace Bulky.DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DisplayOrder = table.Column<int>(type: "int", nullable: false),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -34,10 +34,10 @@ namespace Bulky.DataAccess.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(51)", maxLength: 51, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    ISBN = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Author = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ListPrice = table.Column<double>(type: "float", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
                     Price50 = table.Column<double>(type: "float", nullable: false),
@@ -61,9 +61,9 @@ namespace Bulky.DataAccess.Migrations
                 columns: new[] { "Id", "CreatedDateTime", "DisplayOrder", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7476), 1, "Action" },
-                    { 2, new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7489), 2, "SciFi" },
-                    { 3, new DateTime(2024, 7, 19, 3, 38, 35, 298, DateTimeKind.Local).AddTicks(7491), 3, "History" }
+                    { 1, new DateTime(2024, 7, 20, 23, 9, 25, 915, DateTimeKind.Local).AddTicks(6949), 1, "Action" },
+                    { 2, new DateTime(2024, 7, 20, 23, 9, 25, 915, DateTimeKind.Local).AddTicks(6964), 2, "SciFi" },
+                    { 3, new DateTime(2024, 7, 20, 23, 9, 25, 915, DateTimeKind.Local).AddTicks(6965), 3, "History" }
                 });
 
             migrationBuilder.InsertData(

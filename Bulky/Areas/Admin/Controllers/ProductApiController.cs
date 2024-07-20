@@ -41,9 +41,20 @@ namespace Bulky.Areas.Admin.Controllers
 
            
             List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
-            //var json = JsonSerializer.Serialize(objProductList, options);
-            return Json(new { data = objProductList });
-        }
+
+			//         var result = _unitOfWork.Product.GetAll("Category").Select(p => new 
+			//         { 
+			//           Title = p.Title,
+			//           Price = p.Price,
+			//           Author=p.Author,
+			//ISBN = p.ISBN,
+			//         category=p.Category.Name
+
+			//         }).ToList();
+			////var json = JsonSerializer.Serialize(objProductList, options);
+			//return Json(new { data = result });
+			return Json(new { data = objProductList });
+		}
 
 
 
