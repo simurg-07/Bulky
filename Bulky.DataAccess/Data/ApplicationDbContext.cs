@@ -1,11 +1,12 @@
 using Bulky.Models.Models.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace Bulky.Data;
+namespace Bulky.DataAccess.Data;
 
-public class ApplicationDbContext : IdentityDbContext
+public class ApplicationDbContext : IdentityDbContext<IdentityUser>
 {
 
      public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options)
