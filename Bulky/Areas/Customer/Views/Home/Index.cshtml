@@ -5,78 +5,37 @@
 
 
 
-<section class="section featured" aria-label="featured collection">
-    <div class="container">
+<div class="row pb-3">
+	@foreach (var product in Model)
+	{
+		<div class="col-lg-3 col-md-6">
+			<div class="row p-2">
+				<div class="col-12 p-1">
+					<div class="card border-0 p-3 shadow border-top border-5 rounded">
+						<img src="@product.ImageUrl" class="card-img-top rounded" />
 
-        <h2 class="h2 section-title">Featured Collections</h2>
-
-        <p class="section-text">
-            Contrary to popular belief, Lorem Ipsum is not simply random.
-        </p>
-
-        <ul class="grid-list">
-
-         
-                @foreach (var product in Model)
-                {
-
-                <li>
-                    <div class="product-card">
-
-                        <span class="card-badge">New</span>
-
-                        <div class="" style="--width: 384; --height: 480;">
-                            <img src="@product.ImageUrl" width="384" height="480" loading="lazy" alt="image"
-                                 class="img-cover">
-
-                            <div class="card-action">
-
-                                <button class="action-btn" aria-label="quick view" title="Quick View">
-                                    <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
-                                </button>
-
-                                <button class="action-btn" aria-label="add to wishlist" title="Add to Wishlist">
-                                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                                </button>
-
-                                <button class="action-btn" aria-label="compare" title="Compare">
-                                    <ion-icon name="repeat-outline" aria-hidden="true"></ion-icon>
-                                </button>
-
-                                <button class="action-btn" aria-label="add to cart" title="Add to Cart">
-                                    <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                                </button>
-
-                            </div>
-                        </div>
-
-                        <div class="card-content text-center">
-
-                            <h3 class="h3">
-                                <a href="#" class="card-title  text-center">@product.Title</a>
-                            </h3>
-
-                            <data class="card-price" value="80">$@product.ListPrice.ToString("0.00")</data>
-
-                            <div class="rating-wrapper">
-                                <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                                <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                                <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                                <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                                <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </li>
-
-                }
-          
-
-
-        </ul>
-
-    </div>
-</section>
-
+						<div class="card-body pb-0">
+							<div class="pl-1">
+								<p class="card-title h5 text-primary opacity-75 text-center">@product.Title</p>
+								<p class="card-title text-info">by <b>@product.Author</b></p>
+							</div>
+							<div class="pl-1">
+								<p>List Price: <strike><b>$@product.ListPrice.ToString("0.00")</b></strike></p>
+							</div>
+							<div class="pl-1">
+								<p>As low as: <b>$@product.Price100.ToString("0.00")</b></p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<a asp-action="Details"
+						   asp-route-productId="@product.Id"
+						   class="btn btn-primary bg-gradient border-0 form-control" asp-route-productId="@product.Id">
+							Details
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+</div>
