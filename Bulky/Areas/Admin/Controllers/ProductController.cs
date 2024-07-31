@@ -65,57 +65,63 @@ namespace Bulky.Areas.Admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(ProductVM productVM, IFormFile? file)
+{
+    if (ModelState.IsValid)
+    {
+        string wwwRootPath = _webHostEnvironment.WebRootPath;
+
+        if (file != null)
         {
-          
-            
-            if (ModelState.IsValid)
+            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+            string productPath = Path.Combine(wwwRootPath, "images", "product");
+
+            if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
             {
-				string wwwRootPath = _webHostEnvironment.WebRootPath;
-
-				if (file != null)
-				{
-					string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-					string productPath = Path.Combine(wwwRootPath, @"images\product\");
-
-					if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
-					{
-						var oldImagePath = Path.Combine(wwwRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
-						if (System.IO.File.Exists(oldImagePath))
-						{
-							System.IO.File.Delete(oldImagePath);
-						}
-					}
-
-					using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
-					{
-						file.CopyTo(fileStream);
-					}
-				   productVM.Product.ImageUrl = @"\images\product\" + fileName;
-				}
-
-                if (productVM.Product.Id == 0) { 
-                    _unitOfWork.Product.Add(productVM.Product);
-                }else
+                var oldImagePath = Path.Combine(wwwRootPath, productVM.Product.ImageUrl.TrimStart('\\', '/'));
+                if (System.IO.File.Exists(oldImagePath))
                 {
-					_unitOfWork.Product.Update(productVM.Product);
-				}
-
-
-				
-                _unitOfWork.Save();
-                TempData["success"] = "Product created successfully";
-                return RedirectToAction("Index");
+                    System.IO.File.Delete(oldImagePath);
+                }
             }
-            else
-            {
-                productVM.CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem { Text = u.Name, Value = u.Id.ToString() });
-				
 
-				// Üstteki olay category select kısmındaki category kısmını getiriyor
-				return View(productVM);
-			}
-           
+            if (!Directory.Exists(productPath))
+            {
+                Directory.CreateDirectory(productPath);
+            }
+
+            using (var fileStream = new FileStream(Path.Combine(productPath, fileName), FileMode.Create))
+            {
+                file.CopyTo(fileStream);
+            }
+
+            productVM.Product.ImageUrl = Path.Combine("images", "product", fileName).Replace("\\", "/");
         }
+
+        if (productVM.Product.Id == 0)
+        {
+            _unitOfWork.Product.Add(productVM.Product);
+        }
+        else
+        {
+            _unitOfWork.Product.Update(productVM.Product);
+        }
+
+        _unitOfWork.Save();
+        TempData["success"] = "Product created successfully";
+        return RedirectToAction("Index");
+    }
+    else
+    {
+        productVM.CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+        {
+            Text = u.Name,
+            Value = u.Id.ToString()
+        });
+
+        return View(productVM);
+    }
+}
+
 
 
         ///GET

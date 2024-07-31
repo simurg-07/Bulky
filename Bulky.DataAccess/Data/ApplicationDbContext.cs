@@ -19,8 +19,8 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
 
 	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
-		optionsBuilder.UseSqlServer(@"Server=EIS\SQLEXPRESS;Database=Bulky;Trusted_Connection=true;
-                TrustServerCertificate=true");
+		optionsBuilder.UseSqlServer(@"Server=localhost;Database=Bulky; User ID=SA;Password=reallyStrongPwd123;Trusted_Connection=false;TrustServerCertificate=true"
+    );
 	}
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)

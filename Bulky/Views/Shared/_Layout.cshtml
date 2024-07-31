@@ -7,6 +7,8 @@
     <title>@ViewData["Title"] - Bulky</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <title>@ViewData["Title"] - Bulky</title>
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="~/css/slider.css" />
    
 
     <link rel="stylesheet" href="~/Bulky.styles.css" asp-append-version="true" />
@@ -57,22 +59,7 @@
             </div>
         </nav>
     </header>
-    <div class="container align-content-center" style="border: 0.5px solid black; margin: 10px auto; max-width: 1060px; border-radius:20px">
-        <div class="row">
-            <div class="col-md-6 align-content-center">
-                <h1>Get Your New</h1>
-                <h1>Book Collections</h1>
-                <hr class="my-4" style="background-color: #93c54b;">
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                <button class="btn btn-explore mt-4">Explore More <i class="bi bi-cart-fill"></i></button>
-            </div>
-            <div class="col-md-6 d-flex justify-content-center align-items-center">
-                <div class="book-cover">
-                    <img src="./assets/images/hero-banner.png" width="375" height="500" alt="Book Cover">
-                </div>
-            </div>
-        </div>
-    </div>
+
 
 
 
@@ -95,9 +82,12 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/slider.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="//cdn.datatables.net/2.0.8/js/dataTables.min.js" asp-append-version="true"></script>
     <script src="https://cdn.tiny.cloud/1/acppdlmfxb5sgc7032mqxx6s6j6cts9jubvjvu086rhx1kju/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
