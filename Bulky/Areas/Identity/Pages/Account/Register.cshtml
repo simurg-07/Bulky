@@ -55,6 +55,14 @@
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
                 <input asp-for="Input.ConfirmPassword" type="password" autocomplete="confirm-password" aria-required="true" placeholder="confirm password">
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+
+
+
+                <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-select" style="height:40px; padding:10px 0 10px 10px;"></select>
+               
+
+
+
                 <a href="#">Forgot your email or password?</a>
                 <button id="registerSubmit"  type="submit" id="register">Sign in</button>
             </form>

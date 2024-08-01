@@ -16,14 +16,24 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
 
         public DbSet<Category> Categories {get; set;}
         public DbSet<Product> Products { get; set; }
+		public DbSet<ApplicationUser> ApplicationbUsers { get; set; }
 
-	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-	{
-		optionsBuilder.UseSqlServer(@"Server=localhost;Database=Bulky; User ID=SA;Password=reallyStrongPwd123;Trusted_Connection=false;TrustServerCertificate=true"
+    //macos
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //	optionsBuilder.UseSqlServer(@"Server=localhost;Database=Bulky; User ID=SA;Password=reallyStrongPwd123;Trusted_Connection=false;TrustServerCertificate=true"
+    //   );
+    //}
+
+
+    //windows
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=EIS\\SQLEXPRESS;Database=Bulky;Trusted_Connection=true;TrustServerCertificate=true"
     );
-	}
+    }
 
-	protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
 
 		base.OnModelCreating(modelBuilder);

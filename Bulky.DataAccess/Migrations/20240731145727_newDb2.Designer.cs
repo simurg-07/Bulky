@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240723001140_addIdentityTabless")]
-    partial class addIdentityTabless
+    [Migration("20240731145727_newDb2")]
+    partial class newDb2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,21 +52,21 @@ namespace Bulky.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 7, 23, 3, 11, 40, 440, DateTimeKind.Local).AddTicks(6270),
+                            CreatedDateTime = new DateTime(2024, 7, 31, 17, 57, 26, 592, DateTimeKind.Local).AddTicks(9111),
                             DisplayOrder = 1,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 7, 23, 3, 11, 40, 440, DateTimeKind.Local).AddTicks(6285),
+                            CreatedDateTime = new DateTime(2024, 7, 31, 17, 57, 26, 592, DateTimeKind.Local).AddTicks(9124),
                             DisplayOrder = 2,
                             Name = "SciFi"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 7, 23, 3, 11, 40, 440, DateTimeKind.Local).AddTicks(6286),
+                            CreatedDateTime = new DateTime(2024, 7, 31, 17, 57, 26, 592, DateTimeKind.Local).AddTicks(9125),
                             DisplayOrder = 3,
                             Name = "History"
                         });

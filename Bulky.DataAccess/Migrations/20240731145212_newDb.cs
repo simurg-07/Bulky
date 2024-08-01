@@ -1,14 +1,12 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
 namespace Bulky.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class addIdentityTabless : Migration
+    public partial class newDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -206,9 +204,9 @@ namespace Bulky.DataAccess.Migrations
                 columns: new[] { "Id", "CreatedDateTime", "DisplayOrder", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 7, 23, 3, 11, 40, 440, DateTimeKind.Local).AddTicks(6270), 1, "Action" },
-                    { 2, new DateTime(2024, 7, 23, 3, 11, 40, 440, DateTimeKind.Local).AddTicks(6285), 2, "SciFi" },
-                    { 3, new DateTime(2024, 7, 23, 3, 11, 40, 440, DateTimeKind.Local).AddTicks(6286), 3, "History" }
+                    { 1, new DateTime(2024, 7, 31, 17, 52, 11, 710, DateTimeKind.Local).AddTicks(8350), 1, "Action" },
+                    { 2, new DateTime(2024, 7, 31, 17, 52, 11, 710, DateTimeKind.Local).AddTicks(8365), 2, "SciFi" },
+                    { 3, new DateTime(2024, 7, 31, 17, 52, 11, 710, DateTimeKind.Local).AddTicks(8366), 3, "History" }
                 });
 
             migrationBuilder.InsertData(
