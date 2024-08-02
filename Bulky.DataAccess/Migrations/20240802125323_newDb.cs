@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
 namespace Bulky.DataAccess.Migrations
 {
@@ -30,6 +32,12 @@ namespace Bulky.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Discriminator = table.Column<string>(type: "nvarchar(21)", maxLength: 21, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StreetAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PostalCode = table.Column<int>(type: "int", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -111,8 +119,8 @@ namespace Bulky.DataAccess.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -156,8 +164,8 @@ namespace Bulky.DataAccess.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -204,9 +212,9 @@ namespace Bulky.DataAccess.Migrations
                 columns: new[] { "Id", "CreatedDateTime", "DisplayOrder", "Name" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 7, 31, 17, 52, 11, 710, DateTimeKind.Local).AddTicks(8350), 1, "Action" },
-                    { 2, new DateTime(2024, 7, 31, 17, 52, 11, 710, DateTimeKind.Local).AddTicks(8365), 2, "SciFi" },
-                    { 3, new DateTime(2024, 7, 31, 17, 52, 11, 710, DateTimeKind.Local).AddTicks(8366), 3, "History" }
+                    { 1, new DateTime(2024, 8, 2, 15, 53, 23, 459, DateTimeKind.Local).AddTicks(1150), 1, "Action" },
+                    { 2, new DateTime(2024, 8, 2, 15, 53, 23, 459, DateTimeKind.Local).AddTicks(1190), 2, "SciFi" },
+                    { 3, new DateTime(2024, 8, 2, 15, 53, 23, 459, DateTimeKind.Local).AddTicks(1200), 3, "History" }
                 });
 
             migrationBuilder.InsertData(

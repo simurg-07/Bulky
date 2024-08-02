@@ -49,21 +49,21 @@ namespace Bulky.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDateTime = new DateTime(2024, 7, 31, 19, 18, 25, 450, DateTimeKind.Local).AddTicks(306),
+                            CreatedDateTime = new DateTime(2024, 8, 2, 15, 53, 23, 459, DateTimeKind.Local).AddTicks(1150),
                             DisplayOrder = 1,
                             Name = "Action"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDateTime = new DateTime(2024, 7, 31, 19, 18, 25, 450, DateTimeKind.Local).AddTicks(323),
+                            CreatedDateTime = new DateTime(2024, 8, 2, 15, 53, 23, 459, DateTimeKind.Local).AddTicks(1190),
                             DisplayOrder = 2,
                             Name = "SciFi"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDateTime = new DateTime(2024, 7, 31, 19, 18, 25, 450, DateTimeKind.Local).AddTicks(324),
+                            CreatedDateTime = new DateTime(2024, 8, 2, 15, 53, 23, 459, DateTimeKind.Local).AddTicks(1200),
                             DisplayOrder = 3,
                             Name = "History"
                         });
@@ -489,12 +489,10 @@ namespace Bulky.DataAccess.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -531,12 +529,10 @@ namespace Bulky.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
