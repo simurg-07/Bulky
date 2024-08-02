@@ -111,6 +111,11 @@ namespace Bulky.Areas.Identity.Pages.Account
 
             [ValidateNever]
             public IEnumerable<SelectListItem> RoleList { get; set; }
+
+
+            public string UserName { get; set; }
+
+            public string PhoneNumber { get; set; }
         }
 
 
