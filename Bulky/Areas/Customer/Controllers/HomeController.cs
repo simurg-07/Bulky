@@ -4,6 +4,7 @@ using Bulky.Models;
 using Bulky.DataAccess.Repository;
 using Bulky.DataAccess.Repository.IRepository;
 using Bulky.Models.Models.Concrete;
+using Bulky.Models.ViewModels;
 
 namespace Bulky.Areas.Customer.Controllers;
 
@@ -20,14 +21,20 @@ public class HomeController : Controller
 
     }
 
-    public IActionResult Index()
-    {
-        IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
 
-        return View(productList);
-    }
 
-    public IActionResult Details(int productId)
+	public IActionResult Index()
+	{
+		var viewModel = new HomeViewModel
+		{
+			Products = _unitOfWork.Product.GetAll(includeProperties: "Category"),
+			Categories = _unitOfWork.Category.GetAll().ToList()
+		};
+
+		return View(viewModel);
+	}
+
+	public IActionResult Details(int productId)
     {
         Product product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category");
         return View(product);
