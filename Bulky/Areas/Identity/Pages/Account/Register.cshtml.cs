@@ -113,7 +113,7 @@ namespace Bulky.Areas.Identity.Pages.Account
             public IEnumerable<SelectListItem> RoleList { get; set; }
 
 
-            public string UserName { get; set; }
+            public string Name { get; set; }
 
             public string PhoneNumber { get; set; }
         }
@@ -125,9 +125,7 @@ namespace Bulky.Areas.Identity.Pages.Account
             if (!_roleManager.RoleExistsAsync(SD.Role_Customer).GetAwaiter().GetResult())
             {
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Customer)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_Employee)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_Company)).GetAwaiter().GetResult();
             }
 
             Input = new()
@@ -153,9 +151,21 @@ namespace Bulky.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
+                // Kullanıcı adı ayarlanıyor
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+
+                // E-posta adresi ayarlanıyor
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+
+                // Telefon numarası kullanıcı objesinin PhoneNumber alanına atanıyor
+                user.PhoneNumber = Input.PhoneNumber;
+                user.UserName = Input.Name;
+
+                
+                // Kullanıcı oluşturuluyor
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
+
 
                 if (result.Succeeded)
                 {
