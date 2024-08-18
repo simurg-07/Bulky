@@ -4,6 +4,7 @@ using Bulky.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240817172624_db6")]
+    partial class db6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +61,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4238),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(505),
                             Description = "Duygusal ve heyecanlı romanlar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Roman"
@@ -67,7 +70,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4255),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(521),
                             Description = "Gelecek ve teknolojik hikayeler",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Bilim Kurgu"
@@ -76,7 +79,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 3,
                             CategoryId = 3,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4257),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(523),
                             Description = "Sürükleyici ve şaşırtıcı olaylar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Gizem"
@@ -85,7 +88,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 4,
                             CategoryId = 4,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4259),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(525),
                             Description = "Büyülü ve fantastik dünyalar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Fantastik"
@@ -94,7 +97,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 5,
                             CategoryId = 5,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4260),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(530),
                             Description = "Kişisel gelişim ve motivasyon",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Kişisel Gelişim"
@@ -103,7 +106,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 6,
                             CategoryId = 6,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4262),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(531),
                             Description = "Geçmişe dair etkileyici olaylar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Tarih"
@@ -112,7 +115,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 7,
                             CategoryId = 7,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4263),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(532),
                             Description = "Ünlü kişilerin hayat öyküleri",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Biyografi"
@@ -121,7 +124,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 8,
                             CategoryId = 8,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4264),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(534),
                             Description = "Edebiyatın başyapıtları",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Klasikler"
@@ -130,7 +133,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 9,
                             CategoryId = 9,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4266),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(535),
                             Description = "Roman ve edebiyat türleri",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Roman & Edebiyat"
@@ -139,7 +142,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 10,
                             CategoryId = 10,
-                            CreatedDateTime = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4267),
+                            CreatedDateTime = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(536),
                             Description = "Genç yetişkinler için kitaplar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Genç Yetişkin"
@@ -181,7 +184,7 @@ namespace Bulky.DataAccess.Migrations
                             Id = 1,
                             Author = "Emily",
                             Content = "Bu kitabı çok sevdim! Julian Button'ın kalemi harika ve hikaye çok sürükleyici.",
-                            CreatedAt = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4563),
+                            CreatedAt = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(827),
                             ProductId = 3
                         },
                         new
@@ -189,7 +192,7 @@ namespace Bulky.DataAccess.Migrations
                             Id = 2,
                             Author = "James",
                             Content = "Çok keyifli bir okuma deneyimiydi. Kitap beni derinden etkiledi.",
-                            CreatedAt = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4566),
+                            CreatedAt = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(831),
                             ProductId = 3
                         },
                         new
@@ -197,7 +200,7 @@ namespace Bulky.DataAccess.Migrations
                             Id = 3,
                             Author = "Sarah",
                             Content = "Julian Button'ın en iyi kitaplarından biri. Kesinlikle tavsiye ederim!",
-                            CreatedAt = new DateTime(2024, 8, 18, 3, 56, 35, 685, DateTimeKind.Local).AddTicks(4568),
+                            CreatedAt = new DateTime(2024, 8, 17, 20, 26, 22, 773, DateTimeKind.Local).AddTicks(833),
                             ProductId = 3
                         });
                 });

@@ -48,6 +48,11 @@ namespace Bulky.Models.Models.Concrete
 		[ValidateNever]
 		public Category Category { get; set; }
 
-		
-	}
+        [ValidateNever]
+        public ICollection<Comment> Comments { get; set; }
+
+
+
+
+    }
 }

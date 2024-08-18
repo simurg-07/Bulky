@@ -13,11 +13,19 @@ namespace Bulky.DataAccess.Repository
 		private ApplicationDbContext _db;
 		public ICategoryRepository Category { get; private set; }
         public IProductRepository Product { get; private set; }
+
+        public ICommentRepository Comment { get; private set; }
+
+
+
+
         public UnitOfWork(ApplicationDbContext db) 
 		{
 			_db = db;
 			Category = new CategoryRepository(db);
 			Product = new ProductRepository(db);
+			Comment = new CommentRepository(db);
+
 		}
 
 		

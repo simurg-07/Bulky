@@ -14,6 +14,8 @@ namespace Bulky.DataAccess.Repository.IRepository
 
 		IProductRepository Product { get; }
 
-		void Save();
+        ICommentRepository Comment { get; }
+
+        void Save();
 	}
 }

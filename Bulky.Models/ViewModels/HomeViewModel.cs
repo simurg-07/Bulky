@@ -11,5 +11,10 @@ namespace Bulky.Models.ViewModels
 	{
 		public IEnumerable<Product> Products { get; set; }
 		public IEnumerable<Category> Categories { get; set; }
+
+		public string title { get; set; }
+	
+
+
 	}
 }

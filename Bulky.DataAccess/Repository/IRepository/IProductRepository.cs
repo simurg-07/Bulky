@@ -9,6 +9,7 @@ namespace Bulky.DataAccess.Repository.IRepository
 {
     public interface IProductRepository : IRepository<Product>
     {
+        IEnumerable<Product> GetAllWithCategory(int? categoryId);
         void Update(Product obj);
     }
 }

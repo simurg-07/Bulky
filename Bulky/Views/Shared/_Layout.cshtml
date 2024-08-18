@@ -1,5 +1,13 @@
-﻿@using Bulky.Utility
 ﻿
+@using Bulky.Utility
+
+@{
+    var categories = TempData["Categories"] as List<Bulky.Models.Models.Concrete.Category>;
+}
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,9 +45,25 @@
                         <li class="nav-item">
                             <a class="nav-link" style="font-size:18px" asp-area="Customer" asp-controller="Home" asp-action="Index">Anasayfa</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" style="font-size:18px" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Kategoriler</a>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" style="font-size:18px" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Kategoriler
+                            </a>
+                            <ul class="dropdown-menu">
+                                @if (ViewBag.Categories != null)
+                                {
+                                    foreach (var category in ViewBag.Categories as List<Bulky.Models.Models.Concrete.Category>)
+                                    {
+                                        <li>
+                                            <a class="dropdown-item" style="font-size:18px" asp-area="Customer" asp-controller="Home" asp-action="CategoryDetail" asp-route-categoryId="@category.Id">@category.Name</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
                         </li>
+                      
                         <li class="nav-item">
                             <a class="nav-link" style="font-size:18px" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Çok Satanlar</a>
                         </li>
@@ -47,17 +71,18 @@
                         <li class="nav-item">
                             <a class="nav-link" style="font-size:18px" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        @if(User.IsInRole(SD.Role_Admin)){
-                        <li class="nav-item dropdown">
+                        @if (User.IsInRole(SD.Role_Admin))
+                        {
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" style="font-size:18px" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Admin Paneli
-                            </a>
-                            <ul class="dropdown-menu">
+                                    Admin Paneli
+                                </a>
+                                <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" style="font-size:18px" asp-area="Admin" asp-controller="Category" asp-action="Index">Kategori</a></li>
                                     <li><a class="dropdown-item" style="font-size:18px" asp-area="Admin" asp-controller="Product" asp-action="Index">Ürünler</a></li>
-                                    
-                            </ul>
-                        </li>
+
+                                </ul>
+                            </li>
                         }
                     </ul>
                     <partial name="_LoginPartial" />
@@ -108,7 +133,7 @@
       <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
       <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
     </ul>
-    <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+    <p>&copy;2024 Bulky | All Rights Reserved</p>
   </footer>
         </div>
      

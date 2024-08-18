@@ -12,7 +12,7 @@ public class Category : Base
 	public string Name { get; set; }
 	[DisplayName("Display Order")]
 	[Range(1, 100, ErrorMessage = "Display Order must be between 1 and 100 only!!")]
-	public int DisplayOrder { get; set; }
+	public int CategoryId { get; set; }
 	public DateTime CreatedDateTime { get; set; } = DateTime.Now;
     //public ICollection<Product>? Products { get; set; }
 
@@ -21,6 +21,10 @@ public class Category : Base
     public string Description { get; set; }
     [ValidateNever]
     public string ImageUrl { get; set; }
+
+    public ICollection<Product> Products { get; set; }
+
+
 
 
 }

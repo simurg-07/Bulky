@@ -26,6 +26,8 @@ namespace Bulky.Areas.Admin.Controllers
             return View(objCategoryList);
         }
 
+       
+
         //GET
         public IActionResult Create()
         {
@@ -37,7 +39,7 @@ namespace Bulky.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
-            if (obj.Name == obj.DisplayOrder.ToString())
+            if (obj.Name == obj.CategoryId.ToString())
             {
                 ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the Name.");
             }
@@ -72,7 +74,7 @@ namespace Bulky.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(Category obj)
         {
-            if (obj.Name == obj.DisplayOrder.ToString())
+            if (obj.Name == obj.CategoryId.ToString())
             {
                 ModelState.AddModelError("name", "The DisplayOrder cannot exactly match the Name.");
             }

@@ -1,6 +1,7 @@
 ﻿using Bulky.DataAccess.Data;
 using Bulky.DataAccess.Repository.IRepository;
 using Bulky.Models.Models.Concrete;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,15 @@ namespace Bulky.DataAccess.Repository
         
             _db = db;
         }
+
+        public IEnumerable<Product> GetAllWithCategory(int? categoryId)
+        {
+            return _db.Products
+                            .Include(p => p.Category)
+                            .Where(p => !categoryId.HasValue || p.CategoryId == categoryId)
+                            .ToList();
+        }
+
         public void Update(Product obj)
         {
 			var objFromDb = _db.Products.FirstOrDefault(u => u.Id == obj.Id);
