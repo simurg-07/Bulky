@@ -16,15 +16,18 @@ namespace Bulky.DataAccess.Repository
 
         public ICommentRepository Comment { get; private set; }
 
+		public IShoppingCartRepository ShoppingCart { get; private set; }
 
+		public IApplicationUserRepository ApplicationUser { get; private set; }
 
-
-        public UnitOfWork(ApplicationDbContext db) 
+		public UnitOfWork(ApplicationDbContext db) 
 		{
 			_db = db;
 			Category = new CategoryRepository(db);
 			Product = new ProductRepository(db);
 			Comment = new CommentRepository(db);
+			ShoppingCart = new ShoppingCartRepository(db);
+			ApplicationUser = new ApplicationUserRepository(db);
 
 		}
 

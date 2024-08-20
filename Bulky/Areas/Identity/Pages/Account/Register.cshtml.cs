@@ -122,6 +122,8 @@ namespace Bulky.Areas.Identity.Pages.Account
         public async Task OnGetAsync(string returnUrl = null)
         {
 
+           
+
             if (!_roleManager.RoleExistsAsync(SD.Role_Customer).GetAwaiter().GetResult())
             {
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Customer)).GetAwaiter().GetResult();
@@ -143,10 +145,19 @@ namespace Bulky.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
+        //Bunu uzun uzun yazmamızın sebebi registerdaki rollerin hata alımında bir daha gelmemesi için. şimdi sorun yok
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
+            // Rolleri tekrar doldur
+            Input.RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
+            {
+                Text = i,
+                Value = i
+            });
+
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
@@ -161,11 +172,8 @@ namespace Bulky.Areas.Identity.Pages.Account
                 user.PhoneNumber = Input.PhoneNumber;
                 user.UserName = Input.Name;
 
-                
                 // Kullanıcı oluşturuluyor
                 var result = await _userManager.CreateAsync(user, Input.Password);
-
-
 
                 if (result.Succeeded)
                 {
@@ -179,7 +187,6 @@ namespace Bulky.Areas.Identity.Pages.Account
                     {
                         await _userManager.AddToRoleAsync(user, SD.Role_Customer);
                     }
-
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -209,9 +216,17 @@ namespace Bulky.Areas.Identity.Pages.Account
                 }
             }
 
-            // If we got this far, something failed, redisplay form
+            // Eğer bu noktaya ulaşıldıysa, bir hata oluşmuş demektir. Rol listesini tekrar doldur
+            Input.RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
+            {
+                Text = i,
+                Value = i
+            });
+
+            // Formu yeniden göster
             return Page();
         }
+
 
         private ApplicationUser CreateUser()
         {

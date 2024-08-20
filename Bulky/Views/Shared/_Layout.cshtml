@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Bulky</title>
+    <title>@ViewData["Title"] - E-Book</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 
     <link rel="stylesheet" href="~/css/login.css" />
@@ -35,7 +35,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
             <div class="container" style="height:80px">
-                <a class="navbar-brand" style="font-size:30px" asp-area="" asp-controller="Home" asp-action="Index">Bulky</a>
+                <a class="navbar-brand" style="font-size:30px" asp-area="" asp-controller="Home" asp-action="Index"> E - Book</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -64,13 +64,8 @@
                             </ul>
                         </li>
                       
-                        <li class="nav-item">
-                            <a class="nav-link" style="font-size:18px" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Çok Satanlar</a>
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" style="font-size:18px" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        
+
                         @if (User.IsInRole(SD.Role_Admin))
                         {
                             <li class="nav-item dropdown">
@@ -84,6 +79,12 @@
                                 </ul>
                             </li>
                         }
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-size:18px" asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                                Sepetim
+                            </a>
+                        </li>
+
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -126,14 +127,7 @@
           <ion-icon name="logo-instagram"></ion-icon>
         </a></li>
     </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-    </ul>
-    <p>&copy;2024 Bulky | All Rights Reserved</p>
+            <p>&copy;2024  E-Book | All Rights Reserved</p>
   </footer>
         </div>
      

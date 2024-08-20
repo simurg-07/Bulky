@@ -43,10 +43,10 @@
 								<p class="card-title text-info">by <b>@product.Author</b></p>
 							</div>
 							<div class="pl-1">
-								<p>List Price: <strike><b>$@product.ListPrice.ToString("0.00")</b></strike></p>
+								<p>Liste Fiyatı: <strike><b>$@product.ListPrice.ToString("0.00")</b></strike></p>
 							</div>
 							<div class="pl-1">
-								<p>As low as: <b>$@product.Price100.ToString("0.00")</b></p>
+								<p>En Düşük: <b>$@product.Price100.ToString("0.00")</b></p>
 							</div>
 						</div>
 					</div>
@@ -54,7 +54,7 @@
 						<a asp-action="Details"
 						   asp-route-productId="@product.Id"
 						   class="btn btn-primary bg-gradient border-0 form-control" asp-route-productId="@product.Id">
-							Details
+							Detay
 						</a>
 					</div>
 				</div>

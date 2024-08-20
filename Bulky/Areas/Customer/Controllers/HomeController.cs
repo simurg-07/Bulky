@@ -5,6 +5,9 @@ using Bulky.DataAccess.Repository;
 using Bulky.DataAccess.Repository.IRepository;
 using Bulky.Models.Models.Concrete;
 using Bulky.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
+using Bulky.Utility;
+using System.Security.Claims;
 
 namespace Bulky.Areas.Customer.Controllers;
 
@@ -68,20 +71,60 @@ public class HomeController : Controller
         return View(viewModel);
     }
 
-
-
-
-
-
-
     public IActionResult Details(int productId)
     {
-        var product = _unitOfWork.Product.Get(
-            u => u.Id == productId,
-            includeProperties: "Category,Comments"
-        );
-        return View(product);
+        ShoppingCart cart = new()
+        {
+            Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category,Comments"),
+            Count = 1,
+            ProductId = productId
+        };
+        return View(cart);
     }
+
+
+
+
+
+
+    [HttpPost]
+    [Authorize]
+    public IActionResult Details(ShoppingCart shoppingCart)
+    {
+        var claimsIdentity = (ClaimsIdentity)User.Identity;
+        var UserId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+        shoppingCart.ApplicationUserId = UserId;
+
+        ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(
+            u => u.ApplicationUserId == UserId && u.ProductId == shoppingCart.ProductId);
+
+
+        if (cartFromDb != null) {
+            cartFromDb.Count += shoppingCart.Count;
+            _unitOfWork.ShoppingCart.Update(cartFromDb);
+
+        } 
+        else {
+            _unitOfWork.ShoppingCart.Add(shoppingCart);
+        }
+        
+        _unitOfWork.Save();
+
+
+
+        // Ýþlem sonrasý ayný sayfaya dönmek için ürünü tekrar yükle ve View'a geri dön
+        ShoppingCart cart = new()
+        {
+            Product = _unitOfWork.Product.Get(u => u.Id == shoppingCart.ProductId, includeProperties: "Category,Comments"),
+            Count = shoppingCart.Count,
+            ProductId = shoppingCart.ProductId
+        };
+
+        return View(cart);
+    }
+
+
+
 
     [HttpPost]
     public IActionResult AddComment(int productId, Comment comment)

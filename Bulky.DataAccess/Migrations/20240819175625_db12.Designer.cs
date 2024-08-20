@@ -4,6 +4,7 @@ using Bulky.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bulky.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240819175625_db12")]
+    partial class db12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +61,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6676),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6867),
                             Description = "Duygusal ve heyecanlı romanlar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Roman"
@@ -67,7 +70,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6695),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6890),
                             Description = "Gelecek ve teknolojik hikayeler",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Bilim Kurgu"
@@ -76,7 +79,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 3,
                             CategoryId = 3,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6698),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6893),
                             Description = "Sürükleyici ve şaşırtıcı olaylar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Gizem"
@@ -85,7 +88,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 4,
                             CategoryId = 4,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6699),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6895),
                             Description = "Büyülü ve fantastik dünyalar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Fantastik"
@@ -94,7 +97,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 5,
                             CategoryId = 5,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6701),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6897),
                             Description = "Kişisel gelişim ve motivasyon",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Kişisel Gelişim"
@@ -103,7 +106,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 6,
                             CategoryId = 6,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6702),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6899),
                             Description = "Geçmişe dair etkileyici olaylar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Tarih"
@@ -112,7 +115,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 7,
                             CategoryId = 7,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6704),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6901),
                             Description = "Ünlü kişilerin hayat öyküleri",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Biyografi"
@@ -121,7 +124,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 8,
                             CategoryId = 8,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6705),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6903),
                             Description = "Edebiyatın başyapıtları",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Klasikler"
@@ -130,7 +133,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 9,
                             CategoryId = 9,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6707),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6906),
                             Description = "Roman ve edebiyat türleri",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Roman & Edebiyat"
@@ -139,7 +142,7 @@ namespace Bulky.DataAccess.Migrations
                         {
                             Id = 10,
                             CategoryId = 10,
-                            CreatedDateTime = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(6708),
+                            CreatedDateTime = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(6908),
                             Description = "Genç yetişkinler için kitaplar",
                             ImageUrl = "https://lh3.googleusercontent.com/aC9nyW5dhaYFmWD8fcf8DApjpH08eHEkbCHqmUPHRQ5T3jK-QyNKZYVMehmrvyPdEA_KxWvgZ3_kyOOYOAv99Ow3UoKSvEloleVKGSfLOwOyDV3Q6Dwi1G-NYoa9-t_ofmmskE6BYnVIOnIz2HWlMcijzIEwvKAL_R4z63DaLgG0z_OcGiSQHunwGAPXrBQUv42ZXuIMODq4zxDHczSxJ72b0-_udtdQK3JuT2X8nXCwFoF7GxmOpzXS0H5f50DuCbXoXcx-O7bgBMCXZdMpTxB27-wdXeLmxpYUySXgjSN2NAKmK16DmGLYvw5tMlrqwb8h4MJEEbXjP1pjPxXsahb7UZseEGyn80uLjATANJvusyJWCtzkkxYXPz-yI1rDvfEJKe2eyA-5AvFlzFBSwBMASn8f7mXinUrXMMREkJQjoi89NfZ91G7253OEVQOqcWxddiYtcHCO5v6Pl3QfV2SUTWXgggscDSY2ezjSPpYERNTXnIM_aCyWmIG7ybrfqOB0eVYBAgynyuPVbjd4KuZWZq2Dfu33HX1RuPKglbOuZGD1QbpJnruvUVkAmjDXI40ENN7X=w1600-h900",
                             Name = "Genç Yetişkin"
@@ -169,9 +172,14 @@ namespace Bulky.DataAccess.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ShoppingCartId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("ShoppingCartId");
 
                     b.ToTable("Comments");
 
@@ -181,7 +189,7 @@ namespace Bulky.DataAccess.Migrations
                             Id = 1,
                             Author = "Emily",
                             Content = "Bu kitabı çok sevdim! Julian Button'ın kalemi harika ve hikaye çok sürükleyici.",
-                            CreatedAt = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(7014),
+                            CreatedAt = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(7471),
                             ProductId = 3
                         },
                         new
@@ -189,7 +197,7 @@ namespace Bulky.DataAccess.Migrations
                             Id = 2,
                             Author = "James",
                             Content = "Çok keyifli bir okuma deneyimiydi. Kitap beni derinden etkiledi.",
-                            CreatedAt = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(7017),
+                            CreatedAt = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(7484),
                             ProductId = 3
                         },
                         new
@@ -197,7 +205,7 @@ namespace Bulky.DataAccess.Migrations
                             Id = 3,
                             Author = "Sarah",
                             Content = "Julian Button'ın en iyi kitaplarından biri. Kesinlikle tavsiye ederim!",
-                            CreatedAt = new DateTime(2024, 8, 20, 5, 51, 32, 578, DateTimeKind.Local).AddTicks(7019),
+                            CreatedAt = new DateTime(2024, 8, 19, 20, 56, 23, 992, DateTimeKind.Local).AddTicks(7488),
                             ProductId = 3
                         });
                 });
@@ -261,9 +269,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 1,
                             Author = "Billy Spark",
                             CategoryId = 1,
-                            Description = "Zamanın Şansı, hayatın sunduğu fırsatları ve zorlukları keşfetmek üzerine bir yolculuğa çıkmanızı sağlıyor. Bilgelik ve macera dolu bu kitap, yaşamın anlamını sorgulamanızı sağlayacak.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SWD9999001",
-                            ImageUrl = "images/bookimages/book-1.png",
+                            ImageUrl = "",
                             ListPrice = 99.0,
                             Price = 90.0,
                             Price100 = 80.0,
@@ -275,9 +283,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 2,
                             Author = "Nancy Hoover",
                             CategoryId = 1,
-                            Description = "Karanlık Gökyüzü, bilinmeyen ve gizemli bir dünyanın kapılarını aralıyor. Gerilim ve heyecan dolu bu hikaye, sizi derin düşüncelere ve unutulmaz anlara sürükleyecek.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "CAW777777701",
-                            ImageUrl = "images/bookimages/book-2.png",
+                            ImageUrl = "",
                             ListPrice = 40.0,
                             Price = 30.0,
                             Price100 = 20.0,
@@ -289,9 +297,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 3,
                             Author = "Julian Button",
                             CategoryId = 1,
-                            Description = "Günbatımında Kayboluş, günün son ışıklarında kaybolmanın ve huzuru aramanın öyküsünü anlatıyor. Romantik ve düşündürücü bu kitap, size güzel anılar bırakacak.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "RITO5555501",
-                            ImageUrl = "images/bookimages/book-3.png",
+                            ImageUrl = "",
                             ListPrice = 55.0,
                             Price = 50.0,
                             Price100 = 35.0,
@@ -303,9 +311,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 4,
                             Author = "Abby Muscles",
                             CategoryId = 2,
-                            Description = "Pamuk Şeker, yaşamın tatlı ve hafif yanlarını keşfetmenizi sağlıyor. Eğlenceli ve keyifli bir okuma deneyimi sunan bu kitap, günlük yaşamın stresinden uzaklaşmanıza yardımcı olacak.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "WS3333333301",
-                            ImageUrl = "images/bookimages/book-4.png",
+                            ImageUrl = "",
                             ListPrice = 70.0,
                             Price = 65.0,
                             Price100 = 55.0,
@@ -317,9 +325,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 5,
                             Author = "Ron Parker",
                             CategoryId = 3,
-                            Description = "Okyanustaki Kaya, denizin derinliklerinde geçen bir macerayı anlatıyor. Doğa ve denizle iç içe bir serüven arıyorsanız, bu kitap tam size göre.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SOTJ1111111101",
-                            ImageUrl = "images/bookimages/book-5.png",
+                            ImageUrl = "",
                             ListPrice = 30.0,
                             Price = 27.0,
                             Price100 = 20.0,
@@ -331,9 +339,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 6,
                             Author = "Laura Phantom",
                             CategoryId = 2,
-                            Description = "Yapraklar ve Harikalar, doğanın güzelliklerini ve keşfedilmemiş sırlarını anlatıyor. Şiirsel anlatımı ve göz alıcı betimlemeleri ile sizi büyüleyecek.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "FOT000000001",
-                            ImageUrl = "images/bookimages/book-6.png",
+                            ImageUrl = "",
                             ListPrice = 25.0,
                             Price = 23.0,
                             Price100 = 20.0,
@@ -345,9 +353,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 7,
                             Author = "Tom Hardy",
                             CategoryId = 1,
-                            Description = "Gizemli Nehir, doğanın ve tarihin iç içe geçtiği bir anlatı sunuyor. Derin bir keşif ve tarih yolculuğu yapmak isteyenler için ideal bir kitap.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "MR1234567890",
-                            ImageUrl = "images/bookimages/book-7.png",
+                            ImageUrl = "",
                             ListPrice = 45.0,
                             Price = 40.0,
                             Price100 = 30.0,
@@ -359,9 +367,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 8,
                             Author = "Lily Collins",
                             CategoryId = 1,
-                            Description = "Ay Işığında Gölgeler, gece ve mistisizmin iç içe geçtiği bir öyküyü anlatıyor. Gizemli ve etkileyici bir okuma deneyimi arıyorsanız, bu kitap size hitap edecek.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "MS0987654321",
-                            ImageUrl = "images/bookimages/book-8.png",
+                            ImageUrl = "",
                             ListPrice = 60.0,
                             Price = 55.0,
                             Price100 = 45.0,
@@ -373,9 +381,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 9,
                             Author = "Chris Evans",
                             CategoryId = 2,
-                            Description = "Altın Kumlar, tatil ve rahatlama arayışındaki bir karakterin hikayesini sunuyor. Sıcak kumsallar ve huzur dolu anlar için ideal bir okuma.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "GS2345678901",
-                            ImageUrl = "images/bookimages/book-9.png",
+                            ImageUrl = "",
                             ListPrice = 80.0,
                             Price = 75.0,
                             Price100 = 65.0,
@@ -387,9 +395,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 10,
                             Author = "Emma Watson",
                             CategoryId = 3,
-                            Description = "Fısıldayan Çamlar, doğa ve huzur arayanlar için etkileyici bir hikaye sunuyor. Doğanın sessizliği ve güzelliği hakkında derin bir düşünce.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "WP3456789012",
-                            ImageUrl = "images/bookimages/book-10.png",
+                            ImageUrl = "",
                             ListPrice = 35.0,
                             Price = 30.0,
                             Price100 = 25.0,
@@ -401,9 +409,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 11,
                             Author = "Robert Downey Jr.",
                             CategoryId = 1,
-                            Description = "Günbatımı Rüyaları, günün son ışıklarının oluşturduğu atmosferi ve umut dolu bir geleceği keşfetmenizi sağlıyor. Huzur verici ve düşündürücü bir deneyim.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SD4567890123",
-                            ImageUrl = "images/bookimages/book-11.png",
+                            ImageUrl = "",
                             ListPrice = 55.0,
                             Price = 50.0,
                             Price100 = 40.0,
@@ -415,9 +423,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 12,
                             Author = "Scarlett Johansson",
                             CategoryId = 2,
-                            Description = "Okyanus Esintisi, denizin ferahlığını ve huzurunu yansıtıyor. Rahatlatıcı ve tazeleyici bir okuma deneyimi arayanlar için ideal bir seçim.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "OB5678901234",
-                            ImageUrl = "images/bookimages/book-12.png",
+                            ImageUrl = "",
                             ListPrice = 70.0,
                             Price = 65.0,
                             Price100 = 55.0,
@@ -429,9 +437,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 13,
                             Author = "Chris Hemsworth",
                             CategoryId = 3,
-                            Description = "Kış Masalı, karanlık ve soğuk kış günlerinde geçen bir öyküyü anlatıyor. Kışın derinliklerine dair etkileyici ve sürükleyici bir deneyim.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "WT6789012345",
-                            ImageUrl = "images/bookimages/book-13.png",
+                            ImageUrl = "",
                             ListPrice = 40.0,
                             Price = 35.0,
                             Price100 = 25.0,
@@ -443,9 +451,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 14,
                             Author = "Gal Gadot",
                             CategoryId = 2,
-                            Description = "İlkbahar Çiçekleri, doğanın uyanışını ve taze başlangıçları anlatıyor. Baharın canlılığı ve enerjisini hissetmek isteyenler için ideal bir okuma.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "SB7890123456",
-                            ImageUrl = "images/bookimages/book-14.png",
+                            ImageUrl = "",
                             ListPrice = 65.0,
                             Price = 60.0,
                             Price100 = 50.0,
@@ -457,9 +465,9 @@ namespace Bulky.DataAccess.Migrations
                             Id = 15,
                             Author = "Jason Momoa",
                             CategoryId = 1,
-                            Description = "Sonbahar Yaprakları, mevsimlerin değişimi ve yaşamın döngüsü hakkında derin bir düşünce sunuyor. Sonbaharın güzelliğini ve melankolisini yansıtan etkileyici bir hikaye.",
+                            Description = "Praesent vitae sodales libero. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra ipsum sit amet tincidunt. ",
                             ISBN = "AL8901234567",
-                            ImageUrl = "images/bookimages/book-15.png",
+                            ImageUrl = "",
                             ListPrice = 30.0,
                             Price = 28.0,
                             Price100 = 20.0,
@@ -733,6 +741,10 @@ namespace Bulky.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Bulky.Models.Models.Concrete.ShoppingCart", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("ShoppingCartId");
+
                     b.Navigation("Product");
                 });
 
@@ -823,6 +835,11 @@ namespace Bulky.DataAccess.Migrations
                 });
 
             modelBuilder.Entity("Bulky.Models.Models.Concrete.Product", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("Bulky.Models.Models.Concrete.ShoppingCart", b =>
                 {
                     b.Navigation("Comments");
                 });
